@@ -1,0 +1,144 @@
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+}
+* {
+  text-decoration: none;
+  color: black;
+}
+
+body {
+  background-color: #efefef;
+}
+
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.blank {
+    /* Pengaturan yang sudah ada */
+    z-index: 90;
+    position: relative;
+    padding: 90px 20px;
+    height: 120vh;
+    color: #f4f4f4;
+    background-color: white;
+}
+
+/* Custom scrollbar for WebKit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(58, 58, 58);
+}
+
+h1.section-title {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 3.5em;
+}
+
+h1.section-title::after{
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Mengatur jarak garis dari teks */
+  left: 50%;
+  width: 50%; /* Ubah lebar garis bawah di sini */
+  height: 2px; /* Tinggi garis bawah */
+  background-color: white; /* Warna garis bawah */
+  transform: translateX(-50%);
+}
+
+
+
+@keyframes backgroundMovement {
+  from {
+    background-position: 0 0; /* Mulai dari posisi awal (kiri atas) */
+  }
+  to {
+    background-position: 100% 100%; /* Pindahkan ke posisi akhir (kanan bawah) */
+  }
+}
+
+@keyframes cardAnim {
+  0%{
+      transform: translateX(-200px);
+  }
+  30%{
+      transform: translateX(-100px);
+  }
+  60%{
+      transform: translateX(0px);
+  }
+}
+
+@keyframes cardAnim2 {
+  0%{
+      transform: translateX(200px);
+  }
+  30%{
+      transform: translateX(50px);
+  }
+  60%{
+      transform: translateX(0px);
+  }
+}
+
+@keyframes sliding {
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+
+  30% {
+    opacity: 1;
+    transform: translateX(-20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX((0px));
+  }
+}
+
+.sliding {
+  animation: sliding linear;
+  animation-timeline: view();
+}
+
+
+
+@media (max-width: 450px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+    height: 12px;
+  }
+  h1 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1.5rem; 
+  }
+
+}

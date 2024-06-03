@@ -1,0 +1,163 @@
+#Skills {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10rem 20px;
+    background-color: #fff;
+    z-index: 90;
+    position: relative;
+}
+
+#Skills h1.section-title::after{
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Mengatur jarak garis dari teks */
+    left: 50%;
+    width: 40%; /* Ubah lebar garis bawah di sini */
+    height: 2px; /* Tinggi garis bawah */
+    background-color: black; /* Warna garis bawah */
+    transform: translateX(-50%);
+  }
+
+.skillsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 40px;
+    animation: sliding linear;
+    animation-timeline: view();
+}
+
+.skillsBox {
+    width: 400px; /* Lebar kotak */
+    height: 400px; /* Tinggi kotak */
+    background-color: #f0f0f0; /* Warna latar belakang */
+    border-radius: 20px; /* Membuat sudut kotak */
+    box-shadow: 5px 5px 10px rgba(56, 56, 56, 0.668);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 15px;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.skillsBox::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: -100%;
+    background-color: blue;
+    position: absolute;
+    transition: left 0.6s;
+    z-index: -1;
+}
+
+.skillsBox:hover::after {
+    left: 0;
+}
+
+
+
+
+
+
+
+.skillsContainer2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 100px;
+    animation: sliding linear;
+    animation-timeline: view();
+}
+
+.bigBox {
+    width: 640px; /* Lebar kotak */
+    height: 400px; /* Tinggi kotak */
+    background-color: #f0f0f0; /* Warna latar belakang */
+    border-radius: 20px; /* Membuat sudut kotak */
+    box-shadow: 5px 5px 10px rgba(56, 56, 56, 0.668);
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding: 15px;
+    justify-content: center;
+}
+
+@keyframes skillAnim {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes skillAnimReverse {
+    from {
+        transform: scale(1.05);
+    }
+    to {
+        transform: scale(1);
+    }
+}
+
+.skillsBox,
+.bigBox {
+    animation: skillAnimReverse 0.5s forwards;
+}
+
+.skillsBox:hover,
+.bigBox:hover {
+    animation: skillAnim 0.5s both;
+}
+
+
+@media (max-width: 450px) {
+    .skillsContainer,
+    .skillsContainer2 {
+        display: flex;
+        flex-direction: column;
+        animation: none;
+    }
+
+    .skillsBox,
+    .bigBox {
+        width: 80%;
+    }
+
+    .sliding {
+        animation: none;
+        transform: none;
+    }
+
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+    #Skills {
+        padding: 8rem 20px; 
+    }
+
+    .skillsContainer,
+    .skillsContainer2 {
+        gap: 30px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .skillsBox,
+    .bigBox {
+        width: 70%; 
+        height: 300px; 
+    }
+
+    .bigBox {
+        width: 70%; 
+    }
+
+}

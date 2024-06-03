@@ -1,0 +1,309 @@
+#Contact {
+    /* height: 96vh; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 90px 20px;
+    background-color: #fff;
+    z-index: 90;
+    position: relative;
+}
+
+
+.contact-container {
+    animation: sliding linear;
+    animation-timeline: view();
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    max-width: 1200px;
+    gap: 2rem 1rem;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+}
+
+#Contact h1.section-title {
+    color: black;
+}
+
+#Contact h1.section-title::after{
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Mengatur jarak garis dari teks */
+    left: 50%;
+    width: 30%; /* Ubah lebar garis bawah di sini */
+    height: 2px; /* Tinggi garis bawah */
+    background-color: black; /* Warna garis bawah */
+    transform: translateX(-50%);
+  }
+.contact-input,
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 45%;
+}
+
+.container-title {
+    margin-bottom: -10px;
+}
+
+.contact-input input , .message{
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #323232;
+    width: 26rem; 
+    height: 2rem;
+    font-size: 14px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.contact-input input:focus, .message:focus{
+    border-color: black;
+    box-shadow: 0 0 0 1.8px black;
+    outline: none;
+}
+
+.contact-input .message {
+    height: 7rem;
+}
+
+.contact-input .btn-send {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.contact-input a {
+    width: 25%;
+    align-items: center;
+}
+
+.contact-input .btn-send:hover {
+    background-color: rgb(101, 101, 101);
+}
+
+.contact-info p {
+    line-height: 1.6;
+    font-size: 1.1em;
+    max-width: 600px; /* Set a maximum width for the paragraph */
+    margin: 0 auto; /* Center the paragraph */
+}
+
+.contact-details-container {
+    display: flex;
+    gap: 0px 10px;
+
+}
+
+.contact-details h1 {
+    margin-bottom: 2px; /* Jarak kecil antara h1 dan p terkait */
+  }
+  
+  .contact-details p {
+    margin-bottom: 30px; /* Jarak lebih besar antara kelompok h1-p yang berbeda */
+  }
+  
+  .contact-details h1 + p {
+    margin-bottom: 30px; /* Pastikan jarak kecil tetap antara h1 dan p yang terkait */
+  }
+  
+
+.contact-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.contact-icon svg {
+    margin: 20px 5px;
+    width: 30px;
+    height: 30px;
+    padding: 10px;
+    border-radius: 100%;
+    transition: border-color 0.5s ease, fill 0.5s ease;
+    padding-top: -60px;
+    border: 2px solid #232323;
+}
+
+.contact-icon .icon-email:hover svg,
+.contact-icon .icon-call:hover svg,
+.contact-icon .icon-location:hover svg {
+    fill: rgb(101, 101, 101);
+    color: rgb(101, 101, 101);
+    border-color: rgb(101, 101, 101);
+}
+
+
+.contact-sosmed {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-sosmed svg {
+    margin: 0px 5px;
+    width: 24px;
+    height: 24px;
+    transition: fill 0.3s ease, transform 0.3s ease; /* Smooth transition for the fill color and size */
+    padding-top: -60px;
+}
+
+.contact-sosmed .iconInstagram:hover svg {
+    fill: #E4405F; /* Instagram brand color */
+    transform: scale(1.2); /* Mengubah ukuran saat dihover */
+    filter: blur(0); /* Menghapus blur saat dihover */
+}
+
+.contact-sosmed .iconLinkedin:hover svg {
+    fill: #007bb5; /* Linkedin brand color */
+    transform: scale(1.2); /* Mengubah ukuran saat dihover */
+    filter: blur(0); /* Menghapus blur saat dihover */
+}
+
+.contact-sosmed .iconWhatsapp:hover svg {
+    fill: #25d366; /* Whatsapp brand color */
+    transform: scale(1.2); /* Mengubah ukuran saat dihover */
+    filter: blur(0); /* Menghapus blur saat dihover */
+}
+
+.contact-sosmed .iconTwitter:hover svg {
+    fill: #08a0e9; /* Twitter brand color */
+    transform: scale(1.2); /* Mengubah ukuran saat dihover */
+    filter: blur(0); /* Menghapus blur saat dihover */
+}
+
+.contact-sosmed .iconInstagram:hover svg,
+.contact-sosmed .iconLinkedin:hover svg,
+.contact-sosmed .iconWhatsapp:hover svg,
+.contact-sosmed .iconTwitter:hover svg {
+    z-index: 1; /* Mengatur z-index agar elemen dihover berada di atas */
+}
+
+@media (max-width: 450px) {
+    #Contact {
+        /* height: 96vh; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 90px 0;
+    }
+
+    .contact-container h1 {
+        font-size: 1.5rem;
+    }
+
+    .contact-container p {
+        font-size: 1em;
+    }
+
+    .contact-details h1 {
+        font-size: 1rem;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 300px;
+        padding: 10px;
+        height: auto;
+    }
+
+    .contact-input,
+    .contact-info {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-input input ,
+    .message {
+        width: 90%;
+    }
+
+    .contact-input .btn-send {
+        width: 110px;
+        justify-content: center;
+        align-self: center;
+    }
+
+    .contact-details h1 {
+        margin-bottom: 2px; 
+    }
+    
+    .contact-icon svg {
+        width: 20px;
+        height: 20px;
+    }
+
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+    #Contact {
+        /* height: 96vh; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 90px 0;
+    }
+
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 90%;
+        padding: 10px;
+        height: auto;
+    }
+
+    .contact-input,
+    .contact-info {
+        width: 100%;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .contact-input input ,
+    .message {
+        width: 90%;
+    }
+
+    .contact-input .btn-send {
+        width: 70%;
+        justify-content: center;
+        align-self: center;
+    }
+
+    h1 {
+        margin-bottom: 10px;
+        font-size: 2rem; 
+    }
+    
+    .contact-details p {
+        font-size: 1.5rem;
+    }
+
+    a {
+        font-size: 1.5rem;
+    }
+
+    .contact-icon svg {
+        margin: 20px 5px;
+        width: 50px;
+        height: 50px;
+        padding: 10px;
+    }
+
+
+}

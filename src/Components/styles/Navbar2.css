@@ -1,0 +1,231 @@
+/* Navbar.css */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+a {
+    font-size: 1rem;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 3rem;
+    border-radius: 25px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.336); /* Atur opacity (0.5) sesuai kebutuhan */
+    backdrop-filter: blur(6px);
+    height: 4rem;
+    margin: 20px 25rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+}
+
+.navbar-logo,
+.navbar-logo a {
+    display: none;
+    font-size: 1.4rem;
+    font-weight: 700;
+    transition: color 0.3s ease;
+}
+
+.navbar-nav img {
+    height: 20px;
+    width: 20px;
+    /* padding-right: 30px; */
+}
+
+.navbar-logo a:hover {
+    cursor: pointer;
+    color: rgb(101, 101, 101);
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 4rem;
+}
+
+.navbar-nav a {
+    color: black;
+    transition: color 0.3s ease;
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.navbar-nav a:hover {
+    color: rgb(101, 101, 101);
+    text-decoration: underline;
+}
+
+.menu-toggle {
+    display: none; /* Sembunyikan tombol hamburger pada tampilan desktop */
+}
+
+.menu-toggle.active .bar:nth-child(2) {
+    transition: 0.3s ease-in-out;
+    scale: 0; /* Sembunyikan bar tengah saat hamburger menu aktif */
+}
+
+.menu-toggle.active .bar:nth-child(1) {
+    transition: 0.3s ease-in-out;
+    transform: translateY(8px) rotate(45deg); /* Rotasi dan translasi untuk bar atas */
+}
+
+.menu-toggle.active .bar:nth-child(3) {
+    transition: 0.3s ease-in-out;
+    transform: translateY(-8px) rotate(-45deg); /* Rotasi dan translasi untuk bar bawah */
+}
+
+@media (max-width: 450px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0px 20px;
+        margin: 0px;
+    }
+    .navbar-logo {
+        display: flex;
+        justify-content: space-between;
+        align-items: center; /* Menengahkan elemen di dalam .navbar-logo */
+        width: 55%;
+    }
+
+    .y-icon {
+        display: none;
+    }
+
+    .navbar-nav {
+        display: none; /* Sembunyikan daftar menu pada tampilan mobile */
+        flex-direction: column;
+        text-align: center;
+        background-color: rgba(128, 128, 128, 0.825);
+        position: absolute;
+        border-radius: 20px;
+        width: 40%;
+        top: 70px;
+        right: 10px;
+        gap: 0;
+    }
+
+    .navbar-nav a{
+        justify-content: center;
+        text-align: center;
+        height: 50px;
+        line-height: 60px; /* Vertically centers text */
+        color: white;
+        font-weight: 500;
+        border-top: 1px solid rgba(255, 255, 255, 0.2); /* Optional: Add border to separate items */
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        animation: slideIn 0.5s ease-in-out;
+    }
+
+    
+    .menu-toggle {
+        display: block; 
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 10px;
+        position: absolute;
+        top: 10px;
+        right: 20px;
+        z-index: 1500;
+    }
+
+    .bar {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: #333;
+        margin: 5px auto;
+        transition: background-color 0.3s ease;
+        transition: 0.3s ease-in-out;
+    }
+
+    .bar1, .bar3 {
+        width: 15px;
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        transition: 0.3s ease-in-out;
+        scale: 0; /* Sembunyikan bar tengah saat hamburger menu aktif */
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transition: 0.3s ease-in-out;
+        transform: translateY(8px) rotate(45deg); /* Rotasi dan translasi untuk bar atas */
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transition: 0.3s ease-in-out;
+        transform: translateY(-8px) rotate(-45deg); /* Rotasi dan translasi untuk bar bawah */
+    }
+}
+
+/* Media Query untuk Tablet */
+@media (min-width: 768px) and (max-width: 1024px) {
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 1.5rem;
+        margin: 10px;
+        top: 0;
+        left: 0;
+        right: 0;
+    }
+
+    .navbar-logo {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+    }
+
+    .navbar-logo a {
+        display: block;
+        font-size: 1.2rem;
+    }
+
+    .navbar-nav {
+        display: none;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+
+    .navbar-nav a {
+        font-size: 1.1rem;
+    }
+    .y-icon {
+        display: none;
+    }
+
+    .menu-toggle {
+        display: block; /* Sembunyikan tombol hamburger pada tampilan tablet */
+    }
+
+    .navbar-nav.active {
+        display: flex;
+        animation: slideIn 0.3s ease-in-out;
+    }
+}
